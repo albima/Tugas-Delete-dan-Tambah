@@ -24,7 +24,7 @@
 			</thead>
 			<tbody>
 				<?php
-				require '../koneksi.php';
+				require './koneksi.php';
 				$query = "SELECT * FROM dosen";
 				// jalankan query diatas
 				$result = mysqli_query($link, $query);

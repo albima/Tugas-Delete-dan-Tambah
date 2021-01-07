@@ -10,6 +10,8 @@
 <body>
 	<div class="container">
 		<div class="alert alert-info"> Data Mahasiswa </div>
+		<a class="btn btn-primary" href="mahasiswa/create.php">Tambah</a>
+		<br>
 		<table class=" table table-bordered">
 			<thead>
 				<tr>
@@ -24,7 +26,7 @@
 			</thead>
 			<tbody>
 				<?php
-				require '../koneksi.php';
+				require './koneksi.php';
 				$query = "SELECT * FROM mahasiswa";
 				// jalankan query diatas
 				$result = mysqli_query($link, $query);
@@ -42,9 +44,9 @@
 					<td><?= $isi->nama_mahasiswa;?></td>
 					<td><?= $isi->prodi;?></td>
 					<td>
-						<a href="" class=" btn btn-danger">Del</a>
+						<a href="mahasiswa/Delete.php?nim=<?= $isi->nim; ?>" class=" btn btn-danger">Del</a>
 
-						<a href="" class=" btn btn-warning">Edit</a>
+						<a href="mahasiswa/Update.php?nim=<?= $isi->nim; ?>" class=" btn btn-warning">Edit</a>
 
 
 
